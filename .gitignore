@@ -1,0 +1,9 @@
+**/.venv/
+**/.env/
+venv/
+env/
+.venv/
+.env/
+**/.env
+.env
+**/*.pdf
