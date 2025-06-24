@@ -8,9 +8,9 @@ from langchain.docstore.document import Document
 import os
 
 # ========== Configuration ==========
-BASE_URL = "https://medlineplus.gov"
+BASE_URL = "https://medlineplus.gov/lab-tests/"
 CHROMA_DIR = "chroma_medlineplus"
-MAX_PAGES = 100
+MAX_PAGES = 1000
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
@@ -22,7 +22,12 @@ pages_content = []
 # ========== Helper Functions ==========
 def is_valid_url(url):
     parsed = urlparse(url)
-    return parsed.netloc == urlparse(BASE_URL).netloc and url not in visited
+    return (
+        parsed.netloc == urlparse(BASE_URL).netloc and
+        url.startswith(BASE_URL) and
+        url not in visited
+    )
+
 
 def crawl(url):
     if len(visited) >= MAX_PAGES:
