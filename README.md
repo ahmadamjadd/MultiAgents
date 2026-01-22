@@ -1,4 +1,4 @@
-# Sehat-Fahm: AI-Powered Medical Lab Report Analysis System
+# Sehat-Fahm: Multi-agent medical analysis system with Urdu voice accessibility for rural healthcare.
 Inside HealthInsightsAgent File
 
 ## Overview
